@@ -1,24 +1,22 @@
 let songInfo = {
     "artists":{
-        "Adele":{
-            "21":[
-                "Fire to the rain"
-        ]},
-        "Ali Gatie":{
-            "YOU":[
-                "Idk",
-                "Its you"
-        ]},
+        "Adele":[
+            "Fire to the rain"
+        ],
+        "Ali Gatie":[
+            "Idk",
+            "Its you"
+        ],
         "Arizona Zervas":{
             "LivingFacts":[
-                "24",
-                "C u l8r",
-                "Drain me",
-                "FML",
-                "My time",
-                "On ten",
-                "Oh my lord",
-                "Holy trinity"
+            "24",
+            "C u l8r",
+            "Drain me",
+            "FML",
+            "My time",
+            "On ten",
+            "Oh my lord",
+            "Holy trinity"
         ]},
         "BringMeTheHorizon":[
             "Can you feel my heart",
@@ -32,7 +30,7 @@ let songInfo = {
                 "Treasure"
             ]
         },
-        "ChaliePuth":{
+        "Chalie Puth":{
             "Voicenotes":[
             "Attention",
             "How long",
@@ -341,7 +339,7 @@ function next_previous(v){
 function playsong(artist_name, album_name,song_name, i){
     var info = JSON.parse(ls.getItem("currentSongInfo"));
     var playing = info.isPlaying;
-    var dir = "./songs/"+artist_name+"/"+album_name+"/"+song_name+".mp3";
+    var dir = "https://swirx.github.io/SX-Waves-Songs/songs/"+artist_name+"/"+album_name+"/"+song_name+".mp3";
     songplaying.src = dir;
     if(!playing){
         title.innerHTML = song_name;
