@@ -1,22 +1,24 @@
 let songInfo = {
     "artists":{
-        "Adele":[
-            "Fire to the rain"
-        ],
-        "Ali Gatie":[
-            "Idk",
-            "Its you"
-        ],
+        "Adele":{
+            "21":[
+                "Fire to the rain"
+        ]},
+        "Ali Gatie":{
+            "YOU":[
+                "Idk",
+                "Its you"
+        ]},
         "Arizona Zervas":{
             "LivingFacts":[
-            "24",
-            "C u l8r",
-            "Drain me",
-            "FML",
-            "My time",
-            "On ten",
-            "Oh my lord",
-            "Holy trinity"
+                "24",
+                "C u l8r",
+                "Drain me",
+                "FML",
+                "My time",
+                "On ten",
+                "Oh my lord",
+                "Holy trinity"
         ]},
         "BringMeTheHorizon":[
             "Can you feel my heart",
@@ -30,7 +32,7 @@ let songInfo = {
                 "Treasure"
             ]
         },
-        "Chalie Puth":{
+        "ChaliePuth":{
             "Voicenotes":[
             "Attention",
             "How long",
@@ -144,6 +146,10 @@ let currentsonginfoTemplate = {
     "index": 0,
     "volume":1
 }
+
+if(ls.getItem('currentSongInfo')== null){
+    ls.setItem("currentSongInfo", JSON.stringify(currentsonginfoTemplate));
+}
 // ls.setItem("currentSongInfo", JSON.stringify(currentsonginfoTemplate))
 
 let head = document.querySelector('head');
@@ -240,7 +246,7 @@ function load(){
     var albumV = info.album;
     var titleV = info.title;
     var timestamp = info.timestamp;
-    var dir = "./songs/"+artistV+"/"+albumV+"/"+titleV+".mp3";
+    var dir = "https://swirx.github.io/SX-Waves-Songs/songs/"+artistV+"/"+albumV+"/"+titleV+".mp3";
     songplaying.src = dir;
     songplaying.currentTime = timestamp;
     title.innerHTML = titleV;
@@ -339,7 +345,7 @@ function next_previous(v){
 function playsong(artist_name, album_name,song_name, i){
     var info = JSON.parse(ls.getItem("currentSongInfo"));
     var playing = info.isPlaying;
-    var dir = "https://swirx.github.io/SX-Waves-Songs/songs/"+artist_name+"/"+album_name+"/"+song_name+".mp3";
+    var dir = "./songs/"+artist_name+"/"+album_name+"/"+song_name+".mp3";
     songplaying.src = dir;
     if(!playing){
         title.innerHTML = song_name;
