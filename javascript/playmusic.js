@@ -1,24 +1,22 @@
 let songInfo = {
     "artists":{
-        "Adele":{
-            "21":[
-                "Fire to the rain"
-        ]},
-        "Ali Gatie":{
-            "YOU":[
-                "Idk",
-                "Its you"
-        ]},
+        "Adele":[
+            "Fire to the rain"
+        ],
+        "Ali Gatie":[
+            "Idk",
+            "Its you"
+        ],
         "Arizona Zervas":{
             "LivingFacts":[
-                "24",
-                "C u l8r",
-                "Drain me",
-                "FML",
-                "My time",
-                "On ten",
-                "Oh my lord",
-                "Holy trinity"
+            "24",
+            "C u l8r",
+            "Drain me",
+            "FML",
+            "My time",
+            "On ten",
+            "Oh my lord",
+            "Holy trinity"
         ]},
         "BringMeTheHorizon":[
             "Can you feel my heart",
@@ -32,7 +30,7 @@ let songInfo = {
                 "Treasure"
             ]
         },
-        "ChaliePuth":{
+        "Chalie Puth":{
             "Voicenotes":[
             "Attention",
             "How long",
@@ -112,7 +110,7 @@ let songInfo = {
             ]
         },
         "J.Cole":{
-            "ForestHillsDrive":[
+            "ForestHillDrive":[
                 "Intro",
                 "January 28th",
                 "Wet Dreamz",
@@ -138,9 +136,9 @@ let songInfo = {
 
 
 let currentsonginfoTemplate = {
-    "title": "",
-    "author": "",
-    "album": "",
+    "title": "Attention",
+    "author": "Charlie Puth",
+    "album": "Voicenotes",
     "timestamp":'0',
     "isPlaying": false,
     "index": 0,
