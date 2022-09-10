@@ -123,7 +123,7 @@ searchbar.addEventListener('input', function(){
                 errors++;
             }
             if(errors<1){
-                print("found "+artist+" with "+errors+" errors");
+                printf("found "+artist+" with "+errors+" errors");
             }else{
                 break;
             }
@@ -142,7 +142,7 @@ searchbar.addEventListener('input', function(){
                 errors++;
             }
             if(errors<1){
-                print(song)
+                printf(song)
             }else{
                 break;
             }
@@ -160,7 +160,7 @@ searchbar.addEventListener('input', function(){
                 errors++;
             }
             if(errors<1){
-                print("found album: "+album+" with "+errors+" errors");
+                printf("found album: "+album+" with "+errors+" errors");
                 var resultHTML = '<img src="https://bit.ly/3p239kI" alt=""><p class="title">'+album+'</p><p class="type">Song</p><div class="playbtn"><ion-icon name="play"></ion-icon></div>'
                 var resultTrack = document.createElement('div');
                 resultTrack.classList.add('album');

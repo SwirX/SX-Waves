@@ -5,10 +5,6 @@ let searchpg = document.getElementById('searchpg');
 let librarybtn = document.getElementById('library');
 let librarypg = document.getElementById('librarypg');
 
-function print(v){
-    console.log(v);
-}
-
 let ls = window.localStorage;
 let ss = window.sessionStorage;
 
@@ -55,19 +51,3 @@ function btnclick(id){
     var btn = document.getElementById(id);
     btn.classList.toggle('active');
 }
-
-//Account
-var isSigned = false;
-const moreAccInfo = document.querySelector(".accmore");
-const profilebtn = document.querySelector('.profilebtn');
-if(isSigned==false){
-    print("not logged in");
-    const buttons = '<button id="signupbtn">Sign up</button><br><button id="loginbtn">login</button>';
-    moreAccInfo.innerHTML = buttons;
-}else{
-    print("logged in")
-}
-
-profilebtn.addEventListener('click', function(){
-    moreAccInfo.classList.toggle('hidden');
-})

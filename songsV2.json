@@ -1,0 +1,294 @@
+{
+    "artists":{
+        "Adele":{
+            "avatarImage":{
+                "url":"https://images.genius.com/638bddc79cd2ada6404099b0f2ac70a3.1000x1000x1.jpg"
+            },
+            "albums":{
+                "21":{
+                    "cover":{
+                        "url":"somelink"
+                    },
+                    "songs":[
+                            "Fire to the rain"
+                        ]
+                }
+            }
+        },
+        "Ali Gatie":{
+            "avatarImage":{
+                "url":"https://images.genius.com/f59533799cad2b07bb29869ee6339076.640x640x1.jpg"
+            },
+            "albums":{
+                "YOU":{
+                    "cover":{
+                        "url":"somelink"
+                    },
+                    "songs":[
+                        "Idk",
+                        "Its you"
+                    ]
+                }
+            }
+            },
+        "Arizona Zervas":{
+            "avatarImage":{
+                "url":"https://images.genius.com/409e8e46e8e9b3ab949f00139f7c3935.1000x1000x1.jpg"
+            },
+            "albums":{
+                "Living Facts":{
+                    "cover":{
+                        "url":"somelink"
+                    },
+                    "songs":[
+                        "24",
+                        "C u l8r",
+                        "Drain me",
+                        "FML",
+                        "My time",
+                        "On ten",
+                        "Oh my lord",
+                        "Holy trinity"
+                    ]
+                }
+            }
+        },
+        "Bring Me The Horizon":{
+            "avatarImage":{
+                "url":"https://images.genius.com/64c7d35c8d427522574cbf7773084ee3.1000x1000x1.jpg"
+            },
+            "albums":{
+                "TempAlbumName":{
+                    "cover":{
+                        "url":"somelink"
+                    },
+                    "songs":[
+                        "Can you feel my heart",
+                        "Die4u",
+                        "Sleepwalking",
+                        "Throne",
+                        "Teardops"
+                    ]
+                }
+            }
+        },
+        "Bruno Mars":{
+            "avatarImage":{
+                "url":"https://images.genius.com/ec38c902389e5d9df5782aa54fcf3c00.888x888x1.jpg"
+            },
+            "albums":{
+                "Unorthodox Jukebox":{
+                    "cover":{
+                        "url":"somelink"
+                    },
+                    "songs":[
+                        "Treasure"
+                    ]
+                }
+            }
+        },
+        "Charlie Puth":{
+            "avatarImage":{
+                "url":"https://images.genius.com/6fe8a772b486b738d715082cba404165.320x320x1.jpg"
+            },
+            "albums":{
+                "Voicenotes":{
+                    "cover":{
+                        "url":"somelink"
+                    },
+                    "songs":[
+                        "Attention",
+                        "How long",
+                        "Thats hilarious"
+                        ]
+                },
+                "Nine Track Mind":{
+                    "cover":{
+                        "url":"somelink"
+                    },
+                    "songs":[
+                        "One call away",
+                        "We dont talk anymore"
+                        ]
+                }
+            }
+        },
+        "Chase Atlantic":{
+            "avatarImage":{
+                "url":"https://images.genius.com/dbf3b86bc9c5086da7afd7544a6a0a14.1000x1000x1.jpg"
+            },
+            "albums":{
+                "Chase Atlantic":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "Angeline",
+                        "Consume",
+                        "Into it",
+                        "Numb to the feeling",
+                        "Okay",
+                        "Ozone",
+                        "STUCKINMYBRAIN",
+                        "Swim",
+                        "the walls",
+                        "Uncomforable"
+                    ]
+                }
+            }
+        },
+        "Dababy":{
+            "avatarImage":{
+                "url":"https://images.genius.com/b68b0e6ba289b80529dc0194cdb7d00d.639x640x1.jpg"
+            },
+            "albums":{
+                "BLAME IT ON BABY":[
+                    "Rockstar"
+                ]
+            }
+        },
+        "DJ Khaled":{
+            "avatarImage":{
+                "url":"https://images.genius.com/ab6d177ad39383915733cf37ca1fb301.999x999x1.jpg"
+            },
+            "albums":{
+                "KHALED KHALED":[
+                    "Greece",
+                    "I did it"
+                ]
+            }   
+        },
+        "Dominic Fike":{
+            "avatarImage":{
+                "url":"https://images.genius.com/d423af243f7f92d2181274c9f6da612d.1000x1000x1.jpg"
+            },
+            "albums":{
+                "Dont Forget About Me Demos":[
+                    "Phone Numbers",
+                    "3 Nights"
+                ]
+            }
+        },
+        "Drake":{
+            "avatarImage":{
+                "url":"https://images.genius.com/631b206379b60df5e1da90e84d35fdbe.1000x1000x1.png"
+            },
+            "albums":{
+                "Views":{
+                    "cover":{"url":"https://bit.ly/3Bl7maq"},
+                    "songs":[
+                        "Fair trade",
+                        "Fire desire",
+                        "In my feelings",
+                        "Feel no ways",
+                        "Hotline Bling",
+                        "One Dance",
+                        "Race my mind"
+                    ]
+                },
+                "Take Care":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "Doing it wrong"
+                    ]
+                },
+                "More Life":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "Passionfruit"
+                    ]
+                },
+                "Nothing was the same":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "Hold on were going home"
+                    ]
+                },
+                "Dark Lane Demo Tapes":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "Pain 1993"
+                    ]
+                },
+                "Lil Durk":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "Laugh now cry later"
+                    ]
+                }
+            }
+        },
+        "Ed Sheeran":{
+            "avatarImage":{
+                "url":"https://images.genius.com/b501daeff73d1b17610f47a5668f690a.1000x1000x1.jpg"
+            },
+            "albums":{
+                "Divide":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "Happier",
+                        "Perfect",
+                        "Shape of you"
+                    ]
+                },
+                "Multiply":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "Thinking out loud"
+                    ]
+                },
+                "Equals":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "Shivers"
+                    ]
+                }
+            }
+        },
+        "J. Cole":{
+            "avatarImage":{
+                "url":"https://images.genius.com/84a98a8d26b13b7311aa2359ebade757.1000x1000x1.jpg"
+            },
+            "albums":{
+                "Forest Hills Drive":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "Intro",
+                        "January 28th",
+                        "Wet Dreamz",
+                        "A Tale of 2 Citiez",
+                        "Fire Squad",
+                        "St Tropez",
+                        "G.O.M.D.",
+                        "No Role Modelz"
+                    ]
+                }
+            }
+            
+        },
+        "The Kid LAROI":{
+            "avatarImage":{
+                "url":"https://images.genius.com/b4902c54d7d33d0c7d43171894b7762a.660x660x1.jpg"
+            },
+            "albums":{
+                "Fuck Love":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "WITHOUT YOU"
+                    ]
+                }
+            }
+        },
+        "Roddy Ricch":{
+            "avatarImage":{
+                "url":"https://images.genius.com/ec507fd0e7f60ce3345349981fbcf0a0.1000x1000x1.jpg"
+            },
+            "albums":{
+                "Please Excuse Me For Being Antisocial":{
+                    "cover":{"url":"somelink"},
+                    "songs":[
+                        "High Fashion"
+                    ]
+                }
+            }
+        }
+    }
+}

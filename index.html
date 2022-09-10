@@ -5,22 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./files/SX-Waves.ico">
     <title>SX-Waves</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
 </head>
 <body>
+    <button class="hamenu hidden">
+        <span class="icon">
+            <svg viewBox="0 0 175 80" width="40" height="40">
+                <rect width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+                <rect y="30" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+                <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+            </svg>
+        </span>
+        <span class="text">MENU</span>
+    </button>
     <div align="right" class="menubar">
         <button class="menubutton btn" id="home"><ion-icon name="home-outline"></ion-icon> Home</button>
         <button class="menubutton btn" id="search"><ion-icon name="search-outline"></ion-icon> Search</button>
         <button class="menubutton btn" id="library"><ion-icon name="library-outline"></ion-icon> Library</button>
-        <button class="profilebtn">placeholder</button>
+        <button class="profilebtn">{name}</button>
         <img src="https://bit.ly/3p239kI" alt="" class="pfp">
         <div class="accmore hidden">
         </div>
-    </div><hr width="90%">
     <!-- PlayingInfo -->
     <div class="playbar">
-        <!-- <img src="https://bit.ly/3p239kI" alt=""class="album-img"> -->
+        <img src="https://bit.ly/3p239kI" alt="image couldn't be loaded"class="song-img">
         <p class="title-name">placeholder</p>
         <p class="author-name">placeholder</p>
         <audio class='currentplaying'src=""></audio>
@@ -32,9 +44,10 @@
         <input type="range" min="0" max="100" value="0" class="volume-slider hidden">
         <input type="range" min="0" max="100" value="0" class="slider" >
         <p class="duration">0:00</p>
-    </div>
+    </div><br><br><br><br>
+</div>
     <!-- home page -->
-    <div id="homepg">
+    <div id="homepg" class='page'>
         <div class="madeforyou">
             <h1>Made For you</h1><br>
         </div><br>
@@ -83,7 +96,7 @@
         </div>
     </div>
     <!-- search page -->
-    <div id="searchpg" class="closed">
+    <div id="searchpg" class="closed page">
         <div align="center" class="searchbar">
             <input type="text" name="searchbar" id="searchbar" placeholder="Search for songs or artists"><ion-icon name="search"></ion-icon>
             <hr width="90%">
@@ -105,11 +118,24 @@
         </div>
     </div>
     <!-- library -->
-    <div id="librarypg" class="closed">
+    <div id="librarypg" class="closed page">
         <div>
 
         </div>
     </div>
+
+    <script type="text/javascript">
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var menu = document.querySelector(".hamenu");
+        if (isMobile) {
+            
+            console.log("You are using Mobile");
+            menu.classList.toggle("hidden")
+              
+        } else {
+            console.log("You are using Desktop");
+        }
+    </script>
 
     <!-- scripts -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -118,5 +144,9 @@
     <script src="./javascript/main.js"></script>
     <script src="./javascript/playmusic.js"></script>
     <script src="./javascript/search.js"></script>
+    <script src="./javascript/usefulFunctions.js"></script>
+    <script src="./javascript/youtube.js"></script>
+    <script src="./javascript/account.js"></script>
+    <script src="./javascript/setImages.js"></script>
 </body>
 </html>
