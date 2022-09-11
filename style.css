@@ -57,9 +57,6 @@ body{
     top: 50%;
     transform: translate(-50%, -50%);
   }
-.page{
-    margin-top: 15vh;
-}
 .menubar{
     position: fixed;
     background: #222;
@@ -73,22 +70,22 @@ body{
 .menubutton{
     position: absolute;
     font-size: large;
-    margin-left: 10px;
+    margin-left: .1vw;
     color: var(--secondarycolor);
     text-decoration: none;
     margin: 10px;
-    right: 40vh;
+    right: 40vw;
 }
 #home{
     background: var(--secondarycolor);
     color: var(--primarycolor);
-    right: 80vh;
+    right: 30vw;
 }
 #search{
-    right:30vw;
+    right:21.5vw;
 }
 #library{
-    right: 21.75vw;
+    right: 13vw;
 }
 .profilebtn{
     position: absolute;
@@ -111,36 +108,48 @@ body{
     right: 5vw;
     top: 1.5vh;
 }
+.madeforyou{
+    overflow-y: hidden;
+    height: 65vh;
+}
+.seeallMFY{
+    position: absolute;
+    left: 90vw;
+    bottom: 77vh;
+    border: none;
+    background: transparent;
+    color:#999;
+    font-size: large;
+}
+.seeallMFY:hover{
+    text-decoration: underline;
+}
 .playlist{
     float: left;
     background: var(--playlistbg);
     color: var(--secondarycolor);
     border: none;
     border-radius: 8px;
-    padding: 10px;
-    height: 250px;
-    width: 200px;
+    padding: 1%;
+    height: 60%;
+    width: 14.1%;
     margin: 20px;
     transition: .5s cubic-bezier( 0, 1, 1, 1 );
 }
 .playlist div img{
     position: relative;
-    left: 1.5vh;
-    height: 175px;
-    width: 175px;
+    left: 4%;
+    height: 6.4%;
+    width: 91%;
     border-radius: 8px;
 }
 .playlist div .playlist-title{
     position: relative;
-    bottom: 20px;
-    left: 5px;
     font-size: large;
     font-weight: 600;
 }
 .playlist div .playlist-artists{
     position: relative;
-    bottom: 35px;
-    left: 5px;
     color: gainsboro;
     font-size: small;
     font-weight: 300;
@@ -148,7 +157,7 @@ body{
 .playlist div .playbtn{
     position: relative;
     top: -120px;
-    left: 150px;
+    left: 11vw;
     background: transparent;
     color: transparent;
     height: 50px;
@@ -158,8 +167,8 @@ body{
     transition: .5s cubic-bezier( 0, 1, 1, 1 );
 }
 .playlist div .playbtn:hover{
-    height: 51px;
-    width: 51px;
+    height: 7.75vh;
+    width: 3.8vw;
     transition: .5s;
 }
 .playbtn > *{
@@ -289,7 +298,7 @@ body{
 }
 .playbar{
     background: transparent;
-    color: var(--secondarycolor);
+    color: magenta;
     border-radius: 2px;
     border: none;
     position: absolute;
@@ -309,7 +318,7 @@ body{
     width: 45px;
     border-radius: 2px;
     top: -.5vh;
-    right: 97vh;
+    right: 46.5vw;
 }
 .title-name {
     bottom: 7vh;
@@ -321,8 +330,15 @@ body{
     left: 4vw;
 }
   
+.currentduration {
+    top: 5.5vh;
+    left: .5vw;
+    font-size: x-small;
+}
 .duration {
-    top: 4vh;
+    top: 5.25vh;
+    left: 53.5vw;
+    font-size: x-small;
 }
 .ppbtn{
     color: var(--secondarycolor);
@@ -385,7 +401,41 @@ body{
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
     left: 43vw;
     top: 2.25vh;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
 }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    0% {opacity: 0;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    0% {opacity: 0;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    0% {opacity: 0;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    0% {opacity: 0;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    0% {opacity: 0;}
+  }
 .volume-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 5px;
@@ -402,61 +452,13 @@ body{
 
 /* Mobile Devices Display */
 @media screen and (max-width: 600px) {
-    .page{
-        margin-top: 15vh;
-    }
-    /* hamburger menu  */
-    /* From uiverse.io by @gagan-gv */
-.hamenu {
-    width: 150px;
-    height: 50px;
-    border-radius: 5px;
-    border: none;
-    transition: all 0.5s ease-in-out;
-    font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    background: #040f16;
-    color: #f5f5f5;
-  }
-  
-  .hamenu:hover {
-    box-shadow: 0 0 20px 0px #2e2e2e3a;
-  }
-  
-  .hamenu .icon {
-    position: absolute;
-    height: 40px;
-    width: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
-  }
-  
-  .hamenu .text {
-    transform: translateX(55px);
-  }
-  
-  .hamenu:hover .icon {
-    width: 175px;
-  }
-  
-  .hamenu:hover .text {
-    transition: all .5s;
-    opacity: 0;
-  }
-  
-  .hamenu:focus {
-    outline: none;
-  }
-  
-  .hamenu:active .icon {
-    transform: scale(0.85);
-  }
 
+  .madeforyou{
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 50vh;
+    white-space: nowrap;
+}
     .menubar{
         position: fixed;
         background: #222;
@@ -475,17 +477,21 @@ body{
         text-decoration: none;
         margin: 10px;
         right: 40vh;
+        display: none;
     }
     #home{
         background: var(--secondarycolor);
         color: var(--primarycolor);
         right: 80vh;
+        display: none;
     }
     #search{
         right:30vw;
+        display: none;
     }
     #library{
         right: 21.75vw;
+        display: none;
     }
     .profilebtn{
         position: absolute;
@@ -497,6 +503,7 @@ body{
         padding: 10px;
         right: 7vw;
         top: 1.5vh;
+        display: none;
     }
     .pfp{
         position: absolute;
@@ -507,6 +514,7 @@ body{
         display: inline-block;
         right: 5vw;
         top: 1.5vh;
+        display: none;
     }
     .playlist{
         float: left;
@@ -515,16 +523,16 @@ body{
         border: none;
         border-radius: 8px;
         padding: 10px;
-        height: 250px;
-        width: 200px;
+        height: 30%;
+        width: 15%;
         margin: 20px;
         transition: .5s cubic-bezier( 0, 1, 1, 1 );
     }
     .playlist div img{
         position: relative;
         left: 1.5vh;
-        height: 175px;
-        width: 175px;
+        height: 40%;
+        width: 50%;
         border-radius: 8px;
     }
     .playlist div .playlist-title{
@@ -665,7 +673,7 @@ body{
         border-radius: 8px;
         border: none;
         box-shadow: 0 0 16px 1px black;
-        width: 10vw;
+        width: 1vw;
         height: fit-content;
         top: 7vh;
         left: 83vw;
@@ -685,15 +693,18 @@ body{
         background: #353535;
     }
     .playbar{
-        background: transparent;
         color: var(--secondarycolor);
-        border-radius: 2px;
         border: none;
         position: absolute;
-        width: 50vw;
-        height: 75px;
-        top: 1vh;
+        width: 85vw;
+        height: 5.5vh;
+        top: 90vh;
+        left: 5vw;
         z-index: 1;
+        border-radius: 4px;
+        background: linear-gradient(225deg, #1f1f1f, #242424);
+        box-shadow:  -20px 20px 40px #0e0e0e,
+                     20px -20px 40px #363636;
     }
     .playbar > *{
         position: absolute;
@@ -701,97 +712,99 @@ body{
         border: none;
         color: var(--secondarycolor);
     }
+    .scrolling { /* Note #2 */
+        position: fixed;
+        top: 89vh;
+    }
     .song-img{
-        height: 45px;
-        width: 45px;
-        border-radius: 2px;
-        top: -.5vh;
-        right: 97vh;
+        height: 4.5vh;
+        width: 8vw;
+        border-radius: 4px;
+        top: .25vh;
+        right: 76.75vw;
     }
     .title-name {
-        bottom: 7vh;
-        left: 4vw;
+        font-size: x-small;
+        bottom: 1.5vh;
+        left: 9vw;
       }
       
     .author-name {
-        bottom: 4vh;
-        left: 4vw;
+        font-size: x-small;
+        top: 1vh;
+        left: 9vw;
     }
       
+    .currentduration {
+        top: 5.5vh;
+        left: .5vw;
+        font-size: x-small;
+        display: none;
+    }
     .duration {
-        top: 4vh;
+        top: 5.25vh;
+        left: 53.5vw;
+        font-size: x-small;
+        display: none;
     }
     .ppbtn{
+        font-size: x-small;
         color: var(--secondarycolor);
-        font-size: 22px;
+        font-size: 14px;
         text-align: center;
-        top: 1vh;
-        left: 25vw;
-        width: 35px;
-        height: 35px;
+        top: 1.5vh;
+        left: 40vw;
+        width: 20px;
+        height: 20px;
         cursor: pointer;
     }
     .play-forward{
+        font-size: x-small;
         color: var(--secondarycolor);
-        font-size: 22px;
+        font-size: 14px;
         text-align: center;
-        top: 1vh;
-        left: 30vw;
-        width: 35px;
-        height: 35px;
+        top: 1.5vh;
+        left: 45vw;
+        width: 20px;
+        height: 20px;
         cursor: pointer;
     }
     .play-back{
+        font-size: x-small;
         color: var(--secondarycolor);
-        font-size: 22px;
+        font-size: 14px;
         text-align: center;
-        top: 1vh;
-        left: 20vw;
-        width: 35px;
-        height: 35px;
+        top: 1.5vh;
+        left: 34vw;
+        width: 20px;
+        height: 20px;
         cursor: pointer;
     }
     .slider{
-        width: 50vw;
-        bottom: 2vh;
-        left: 3vw;
+        top: 4.5vh;
+        position: absolute;
+        height: .5vh;
+        width: 84vw;
+        left: 0;
+    }
+    .slider::-webkit-slider-thumb {
+        opacity: 0;
     }
     .playing-type{
+        font-size: x-small;
         cursor: pointer;
-        font-size: 22px;
-        left: 15vw;
-        top: 1vh;
-        width: 35px;
-        height: 35px;
+        font-size: 14px;
+        left: 25vw;
+        top: 4vh;
+        width: 20px;
+        height: 20px;
+        display: none;
     }
     .volume{
-        cursor: pointer;
-        font-size: 22px;
-        left: 35vw;
-        top: 1vh;
-        width: 35px;
-        height: 35px;
+        display: none;
     }
     .volume-slider {
-        -webkit-appearance: none;
-        width: 90px;
-        background: #111;
-        outline: none;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
-        left: 43vw;
-        top: 2.25vh;
-    }
-    .volume-slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: #00fd0a;
-        cursor: pointer;
-        border: 4px solid #333;
-        box-shadow: -407px 0 0 400px #00fd0a;
+        display: none;
     }
     
 }

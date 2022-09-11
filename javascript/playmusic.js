@@ -53,25 +53,25 @@ let songInfo = {
                 }
             }
         },
-        "Bring Me The Horizon":{
-            "avatarImage":{
-                "url":"https://images.genius.com/64c7d35c8d427522574cbf7773084ee3.1000x1000x1.jpg"
-            },
-            "albums":{
-                "TempAlbumName":{
-                    "cover":{
-                        "url":"somelink"
-                    },
-                    "songs":[
-                        "Can you feel my heart",
-                        "Die4u",
-                        "Sleepwalking",
-                        "Throne",
-                        "Teardops"
-                    ]
-                }
-            }
-        },
+        // "Bring Me The Horizon":{
+        //     "avatarImage":{
+        //         "url":"https://images.genius.com/64c7d35c8d427522574cbf7773084ee3.1000x1000x1.jpg"
+        //     },
+        //     "albums":{
+        //         "TempAlbumName":{
+        //             "cover":{
+        //                 "url":"somelink"
+        //             },
+        //             "songs":[
+        //                 "Can you feel my heart",
+        //                 "Die4u",
+        //                 "Sleepwalking",
+        //                 "Throne",
+        //                 "Teardops"
+        //             ]
+        //         }
+        //     }
+        // },
         "Bruno Mars":{
             "avatarImage":{
                 "url":"https://images.genius.com/ec38c902389e5d9df5782aa54fcf3c00.888x888x1.jpg"
@@ -301,7 +301,8 @@ let currentsonginfoTemplate = {
     "titlecover":"https://bit.ly/3p239kI",
     "albumcover":"https://bit.ly/3p239kI",
     "authorimage":"https://bit.ly/3p239kI",
-    "timestamp":'0',
+    "timestamp": 0,
+    "totalduration":0,
     "isPlaying": false,
     "index": 0,
     "volume":1
@@ -358,15 +359,19 @@ window.onunload = unload;
 
 function changeSongTime(){
     var info = JSON.parse(ls.getItem("currentSongInfo"));
-    songplaying.pause();
     var p = slider.value;
     var d = songplaying.duration;
     var ct = (p/100)*d;
-    songplaying.currentTime = ct;
     info.timestamp = ct;
-    songplaying.play();
     ls.setItem("currentSongInfo", JSON.stringify(info));
     playpausebtn.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
+    var duration = document.querySelector('.currentduration');
+    var s = parseInt(ct % 60);
+    var m = parseInt((ct / 60) % 60);
+    if(s<10){
+        s= "0"+s;
+    };
+     duration.innerHTML = m + ':' + s ;
 }
 function updateSlider(){
     var info = JSON.parse(ls.getItem("currentSongInfo"));
@@ -378,22 +383,17 @@ function updateSlider(){
     info.timestamp = ct;
     ls.setItem("currentSongInfo", JSON.stringify(info));
 }
-songplaying.addEventListener("timeupdate", function(){
-    setInterval(updateSlider, 500);
-});
-slider.addEventListener('change', changeSongTime)
-slider.addEventListener('mousedown', ()=>{
-    printf("mousedown")
-    changeSongTime;
-    songplaying.pause();
-})
-slider.addEventListener("mouseup", ()=>{
-    printf("mouseup")
-    changeSongTime;
-    songplaying.play()
+
+songplaying.addEventListener("timeupdate", updateSlider);
+
+slider.addEventListener('input', changeSongTime);
+slider.addEventListener('mouseup', function(){
     var info = JSON.parse(ls.getItem("currentSongInfo"));
-    info.isPlaying = false;
-    ls.setItem("currentSongInfo", JSON.stringify(info));
+    songplaying.currentTime = info.timestamp;
+    songplaying.addEventListener("timeupdate", updateSlider);
+});
+slider.addEventListener('mousedown', function(){
+    songplaying.removeEventListener("timeupdate", updateSlider);
 })
 
 // Get infos when the page load
@@ -502,28 +502,31 @@ function resumesong(){
 };
 
 // volume
+
+function changeSongVolume(){
+    var info = JSON.parse(ls.getItem("currentSongInfo"));
+    var p = volumeSlider.value;
+    var cv = p/100
+    songplaying.volume = cv;
+    printf("percentage: "+p+"%");
+    printf("current volume: "+cv);
+    info.volume = cv;
+    ls.setItem("currentSongInfo", JSON.stringify(info));
+}
+
 volumebtn.addEventListener('click', ()=>{
-    printf('clicked')
     volumeSlider.classList.toggle("hidden");
 })
-volumeSlider.addEventListener('change', volume);
-
-function volume(){
-    info = JSON.parse(ls.getItem("currentSongInfo"));
-    var value = slider.value;
-    var newVolume = value/100;
-    songplaying.volume = newVolume;
-    info.volume = newVolume;
-    ls.setItem("currentSongInfo", JSON.stringify(info));
-};
+volumeSlider.addEventListener('input', changeSongVolume);
 
 // update the info 
-function updateInfo(a_n, al_n, s_n, ts, p, i){
+function updateInfo(a_n, al_n, s_n, ts, td, p, i){
     info = JSON.parse(ls.getItem("currentSongInfo"));
     info.author = a_n;
     info.album = al_n;
     info.title = s_n;
-    info.timestamp = ts; 
+    info.timestamp = ts;
+    info.totalduration = td;
     info.isPlaying = p;
     info.index = i;
     ls.setItem("currentSongInfo", JSON.stringify(info));
@@ -584,7 +587,7 @@ function playsong(artist_name, album_name,song_name, i){
         songplaying.play();
         playpausebtn.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
     };
-    updateInfo(artist_name, album_name, song_name, 0, true, i);
+    updateInfo(artist_name, album_name, song_name, 0,songplaying.duration, true, i);
 };
 
 
@@ -626,11 +629,20 @@ function playArtist(artist, index=0){
 
 // get the audios's current time
 function getTime(s_obj) {
-    var duration = document.querySelector('.duration');
+    // current time
+    var duration = document.querySelector('.currentduration');
     var s = parseInt(s_obj.currentTime % 60);
     var m = parseInt((s_obj.currentTime / 60) % 60);
     if(s<10){
         s= "0"+s;
     };
      duration.innerHTML = m + ':' + s ;
+    // total duration
+    var tdt = document.querySelector('.duration');
+    var td_s = parseInt(s_obj.duration % 60);
+    var td_m = parseInt((s_obj.duration / 60) % 60);
+    if(s<10){
+        s = "0"+td_s;
+    }
+    tdt.innerHTML = td_m+":"+td_s;
 };
